@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<link rel="stylesheet" href="/static/cadastrarSalaStyle.css">
+
+<script>
+  $.getScript('/static/js/cadastrarSalaScript.js', function () { })
+</script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- PRIMEIRO MODAL -->
+<div id="fullCalModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-footer" style="margin-top:0;">
+        <h3 class="texto">Cadastrar Sala</h3>
+
+
+        <form action="/cadastrasala" class="form" method="post">
+          <div class="columna">
+            <div class="select-box">
+              <select name="blocos" id="blocos" required>
+                <option hidden readonly>Bloco</option>
+                <option value="a"> Bloco A</option>
+                <option value="b"> Bloco B</option>
+                <option value="c"> Bloco C</option>
+              </select>
+            </div>
+            <div class="select-box">
+              <select required name="capacidade" id="capacidade">
+                <option hidden readonly>Capacidade</option>
+                <option>1 Pessoa</option>
+                <option>2 Pessoas</option>
+                <option>3 Pessoas</option>
+                <option>4 Pessoas</option>
+                <option>5 Pessoas</option>
+                <option>6 Pessoas</option>
+                <option>7 Pessoas</option>
+                <option>8 Pessoas</option>
+                <option>9 Pessoas</option>
+                <option>10 Pessoas</option>
+                <option>11 Pessoas</option>
+                <option>12 Pessoas</option>
+                <option>13 Pessoas</option>
+                <option>14 Pessoas</option>
+                <option>15 Pessoas</option>
+                <option>16 Pessoas</option>
+                <option>17 Pessoas</option>
+                <option>18 Pessoas</option>
+                <option>19 Pessoas</option>
+                <option>20 Pessoas</option>
+                <option>21 Pessoas</option>
+                <option>22 Pessoas</option>
+                <option>23 Pessoas</option>
+                <option>24 Pessoas</option>
+                <option>25 Pessoas</option>
+                <option>26 Pessoas</option>
+                <option>27 Pessoas</option>
+                <option>28 Pessoas</option>
+                <option>29 Pessoas</option>
+                <option>30 Pessoas</option>
+                <option>31 Pessoas</option>
+                <option>32 Pessoas</option>
+                <option>33 Pessoas</option>
+                <option>34 Pessoas</option>
+                <option>35 Pessoas</option>
+                <option>36 Pessoas</option>
+                <option>37 Pessoas</option>
+                <option>38 Pessoas</option>
+                <option>39 Pessoas</option>
+                <option>40 Pessoas</option>
+                <option>41 Pessoas</option>
+                <option>42 Pessoas</option>
+                <option>43 Pessoas</option>
+                <option>44 Pessoas</option>
+                <option>45 Pessoas</option>
+                <option>46 Pessoas</option>
+                <option>47 Pessoas</option>
+                <option>48 Pessoas</option>
+                <option>49 Pessoas</option>
+                <option>50 Pessoas</option>
+                <option>51 Pessoas</option>
+                <option>52 Pessoas</option>
+                <option>53 Pessoas</option>
+                <option>54 Pessoas</option>
+                <option>55 Pessoas</option>
+                <option>56 Pessoas</option>
+                <option>57 Pessoas</option>
+                <option>58 Pessoas</option>
+                <option>59 Pessoas</option>
+                <option>60 Pessoas</option>
+              </select>
+            </div>
+          </div>
+          <div class="columna">
+            <!-- <div class="input-box">
+              <input name="numerodasala" id="numerodasala" type="number" min='1' placeholder="Número da Sala"
+                required />
+            </div> -->
+            <div class="input-box">
+              <input name="nomeNumeroSala" id="nomeNumeroSala" type="text" placeholder="Número ou Nome da Sala" required />
+            </div>
+          </div>
+          <div class="input-box">
+            <input name="finalidade" id="finalidade" type="text" placeholder="Finalidade" required />
+          </div>
+          <h4>Recursos</h4>
+          <!-- LISTA DE RECURSOS -->
+          <div class="conteudo">
+            <div class="topo">
+              <input type="text" name="inputNovaTarefa" id="inputNovaTarefa" placeholder="Adicione um Recurso">
+              <button id="btnAddTarefa">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <ul id="listaTarefas">
+            </ul>
+            <input type="hidden" name="inputListaTarefas" id="inputListaTarefas">
+          </div>
+          <label class="picture" for="picture__input" tabIndex="0">
+            <span class="picture__image"></span>
+          </label>
+
+          <input type="file" name="picture__input" id="picture__input">
+
+          <div id="janelaEdicao">
+            <button id="janelaEdicaoBtnFechar">
+              <i class="fa fa-times"></i>
+            </button>
+            <h2 id="idTarefaEdicao">Editar</h2>
+            <hr>
+            <div>
+              <div class="frm-linha">
+                <label for="nome">Nome do Recurso</label>
+                <input type="text" id="inputTarefaNomeEdicao">
+              </div>
+              <div class="frm-linha">
+                <button id="btnAtualizarTarefa" type="button">Salvar</button>
+              </div>
+            </div>
+          </div>
+          <div id="janelaEdicaoFundo"></div>
+          <div>
+            <button type="button" id="btnopen" class="btn btn-success" data-dismiss="modal"
+              style="margin-right: 3%;">Sair</button>
+            <button type="submit" class="botoes" style="margin-right: 3%;">Salvar</button>
+          </div>
+        </form>
+        <div>{{mensagem}}</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEGUNDO MODAL -->
+<div id="fullCalModal2" class="modal fade">
+  <div id="mymodal" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-footer" style="margin-top:0;">
+        <h4 style="display: flex; text-align: center; justify-content: center;">Tem certeza que deseja sair?</h4>
+        <button type="button" class="botoes" style="margin-right: 7%; margin-top: 2%;" data-dismiss="modal">Sim</button>
+        <button type="button" class="botoes" style="margin-right: 26%; margin-top: 2%;"
+          data-dismiss="modal">Não</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTAO ABRIR MODAL -->
+<button class="botC" id="openC">Cadastrar Sala<i style="margin-left: 5%;" class="fa fa-plus"></i></button>
+<div class="column">
+  <!-- AGORA AS NOVIDADES "NOVAS"
+  A VARIAVEL SALAS CHEGA AQUI NESTA PÁGINA, DESTA FORMA 
+
+  [(28, 'b', '101b', 4, 'teste; teste 2', 'Desáfio'), (29, 'a', '201b', 13, 'teste 3; teste 1', 'Desáfio')]
+
+  OK
+
+  EU USRO UM FOR PRA DIVIDIR ESTA VARIAVEL
+  ENTAO NÃO TEREI MAIS SALAS
+  MAS SIM SALA
+  QUE PASSA TER ESTE VALOR
+    (28, 'b', '101b', 4, 'teste; teste 2', 'Desáfio')
+
+    ISSO APÓS TER PASSADO PELA FUNÇÃO NO PY
+
+    NÃO O PY ME RETORNA TUDO JUNTO IGUAL NA LINHA 183
+    ISTO QUE SEPARA E FEITO NESTE "FOR" ABAIXO, ENTENDI
+
+    CONHECE O FOR? CONHEÇO, BLZ
+
+    AGORA PARTE INTERESSANTE E MAIS UTIL DESTA PARTE
+
+    CONCEITO BASICO DO FOR É ELE PECORRER UMA ARRAY
+
+    ENTÃO ELE PECORRE A VARIAVEL SALAS
+
+    E CRIA UMA DIV ISSO COM  CADA PARTE DELA
+    PRIMEIRO COM ESTA
+    (28, 'b', '101b', 4, 'teste; teste 2', 'Desáfio')
+    DEPOIS COM ESTA
+    (29, 'a', '201b', 13, 'teste 3; teste 1', 'Desáfio')
+    E SE TIVER MAIS ELE VAI IR FAZENDO A MESMA COISA ATÉ PASSAR POR TODAS AS PARTES DA ARRAY
+    ENTENDI, SERIO? EU ACHEI CONFUSO HAHA
+
+    EU ENTENDI, EU SÓ OLHEI O QUE SEPARAVA, PQ PRA ELE QUEBRAR TEM QUE TER UMA SEPARAÇÃO KKK
+    PEGOU RAPIDO PARABENS
+
+    TA, PERAI DEIXA EU OLHAR O PY
+  
+  -->
+    {% for sala in salas %}
+    <div class="isso">
+      <div class="columnn">
+        <h3>{{sala[2]}}</h3>
+        <button class="fa fa-trash fa-lg" id="close-modal"   onclick="lixo()"></button> <!--lixeira-->
+      </div>
+      <br><i class="fa fa-home space"></i>
+      <button class="bote space">Bloco {{sala[1]}}</button>
+      <button class="bote" style="margin-left: 5%;">Sala {{sala[2]}}</button>
+      <h6 style="margin: 2%; font-size: 1.5rem; ">Finalidade:</h6>
+      <div
+        style="border: 2px solid rgb(154, 143, 255);margin: 3%; border-radius: 7px; padding: 10px; text-align: justify;">
+        {{sala[5]}}</div>
+      <h6 style="margin: 2%; font-size: 1.5rem;">Recursos:</h6>
+      <div
+        style="border: 2px solid rgb(154, 143, 255);margin: 3%; border-radius: 7px; padding: 10px; text-align: justify;">
+        {% for recurso in sala[4].split(';') %}
+        <i class="fa fa-check-circle"></i><a style="color: black; text-decoration: none; font-size: 1.4rem;">{{ recurso }}</a><br>
+            {% endfor %}
+      </div>
+      <div class="columnn">
+        <img style="border: none; border-radius: 0%; width: 25%;" src="/static/img/salanormaldeaula.jpeg">
+        <img style="border: none; border-radius: 0%; width: 25%;" src="/static/img/salaeletroeletronica.jpeg">
+      </div>
+    </div>
+    {% endfor %}
+</table>
+</div>
+
+
+<script src="/static/js/cadastrarSalaScript.js"></script>
+
+{% endblock conteudo %}

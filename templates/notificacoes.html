@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <link rel="stylesheet" href="/static/notificacoes.css" />
+
+    <script>
+        $.getScript('/static/js/notificacoesScript.js', function() { })
+     </script>
+
+    <h4 class="titulo">Notificações</h4>
+    {% for result in results %}
+      <div class="column" id="excluir">
+        <button class="noti">
+          <i class="fa fa-info-circle" style="margin-right: 3%;"></i>
+          <a>{{result[10]}} deseja reservar a Sala {{result[8]}} na seguinte data {{ result[2]}} do horário de {{result[3]}} ás {{result[4]}}, para {{result[1]}}.</a>
+          <br><a class="dates"> 23/03/2023   11:16</a>
+        </button>
+      <a href="#modal-{{result[5]}}" class="btn btn-big"><img src="/static/img/lupa2.png"></a>
+      </div>
+      <!-- {{result[0]}}-----0<br>
+      {{result[1]}}-----1<br>
+      {{result[2]}}-----2<br>
+      {{result[3]}}-----3<br>
+      {{result[4]}}-----4<br>
+      {{result[5]}}-----5<br>
+      {{result[6]}}-----6<br>
+      {{result[7]}}-----7<br>
+      {{result[8]}}-----8<br>
+      {{result[9]}}-----9<br>
+      {{result[10]}}-----10<br>
+      {{result[11]}}-----11<br> -->
+      {% endfor %}
+   
+  <!-- Janela Modal -->
+  <div class="modal" id="modal-one" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <a class="titulo">Rodrigo Lacerda</a>
+        <a href="#" class="btn-close" style="font-size: 30px;" aria-hidden="true">×</a>
+      </div>
+      <i class="fa fa-home space"></i>
+      <button class="bote space">Bloco A</button>
+      <button class="bote">Sala 201</button>
+      <br><i class="fa fa-calendar space"></i><a style="margin-left: 2%;">16/02/2023</a>
+      <br><i class="fa fa-clock space"></i>
+      <button class="bote space">13:00</button>
+      <button class="bote space" style="margin-bottom: 3%;">17:00</button>
+      <br><a>Finalidade:</a>
+      <br><input type="text" style="font-size: 0.9rem;" class="input" placeholder="  Para aplicação de prova." readonly>
+      <div class="column">
+        <button class="troca-tituloc margemm" onclick="funcConfirm()" value="confirmar Pedido"><a style="text-decoration:none; color: rgb(255, 255, 255);" >Confirmar Pedido</a></button>
+        <button class="troca-tituloc" onclick="funcNega()" value="Negar Pedido"><a style="text-decoration:none; color: rgb(255, 255, 255);" >Negar Pedido</a></button>
+      </div>
+    </div>
+  </div>
+
+  {% for result in results %}
+  <div class="modal" id="modal-{{result[5]}}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <a class="titulo">{{result[10]}}</a>
+        <a href="#" class="btn-close" style="font-size: 30px;" aria-hidden="true">×</a>
+      </div>
+      <i class="fa fa-home space"></i>
+      <button class="bote space">Bloco {{result[12]}}</button>
+      <button class="bote">Sala {{result[8]}}</button>
+      <br><i class="fa fa-calendar space"></i><a style="margin-left: 2%;">{{result[2]}}</a>
+      <br><i class="fa fa-clock space"></i>
+      <button class="bote space">{{result[3]}}</button>
+      <button class="bote space" style="margin-bottom: 3%;">{{result[4]}}</button>
+      <br><a>Finalidade:</a>
+      <br><input type="text" style="font-size: 0.9rem;" class="input" placeholder="{{result[1]}}" readonly>
+      <div class="column">
+        <form action="/atualizarReserva" method="post" id="updateReserva">
+          <input type="hidden" name="opcao" >
+          <input type="hidden" name="id_reserva" value="{{result[5]}}">
+          <button type="submit" onclick="setOpcao('Confirmado')" class="troca-tituloc margemm"  value="confirmar Pedido" style="text-decoration:none; color: rgb(255, 255, 255);" >Confirmar Pedido</button>
+          <button type="submit" onclick="setOpcao('Negado')" class="troca-tituloc"  value="Negar Pedido" style="text-decoration:none; color: rgb(255, 255, 255);" >Negar Pedido</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+      <!-- {{result[0]}}-----0<br>
+      {{result[1]}}-----1<br>
+      {{result[2]}}-----2<br>
+      {{result[3]}}-----3<br>
+      {{result[4]}}-----4<br>
+      {{result[5]}}-----5<br>
+      {{result[6]}}-----6<br>
+      {{result[7]}}-----7<br>
+      {{result[8]}}-----8<br>
+      {{result[9]}}-----9<br>
+      {{result[10]}}-----10<br>
+      {{result[11]}}-----11<br> -->
+      {% endfor %}
+
+
+    <script src="/static/js/notificacoesScript.js"></script>
+
+{% endblock conteudo %}

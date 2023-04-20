@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<head>
+  
+    <link rel="stylesheet" href="/static/opcoes.css">
+</head>     
+{%- for mensagem in get_flashed_messages()  %}
+<article id="cadok">
+    {{mensagem}}
+</article>
+{%- endfor %}
+
+    <main class="cards">
+        <section class="card shop" >
+            <a href="{{url_for('adicionaradm')}}">
+                <img src="/static/img/administrador.png" class="img" alt="Shop here.">
+            </a>
+            <h3>Cadastrar Administrador</h3>
+        </section>
+        <section class="card about">
+            <a href="{{url_for('adicionar')}}">
+                <img src="/static/img/usuario.png" class="img" alt="About us.">
+            </a>
+            <h3>Cadastrar Usuário</h3>
+        </section>
+    </main>
+
+
+{% endblock conteudo %}

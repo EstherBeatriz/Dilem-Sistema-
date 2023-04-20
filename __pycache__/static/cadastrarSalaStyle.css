@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.botC{
+    margin-left: 24%;
+    height: 50px;
+    width: 70%;
+    margin-top: 5%;
+    text-align: left;
+    font-size: 20px;
+    background-color: hsl(211, 100%, 66%);
+    color: azure;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#close-modal{
+  border: none;
+  color: rgb(154, 143, 255);
+  background-color: #fff;
+}
+
+.column .isso{
+  width: 90%;
+  height: 100%;
+  border: 2px solid black !important;
+  margin: 2%; 
+  padding: 10px; 
+  text-align: justify;
+  border-radius: 7px;
+}
+
+.column {
+  flex-wrap: wrap;
+  width: 45%;
+  margin-left: 35%;
+  margin-top: 2%;
+}
+
+.columna {
+  display: flex;
+  column-gap: 15px;
+}
+
+.column .isso h3{
+  margin-left: 20%;
+  margin-right: 30%;
+  margin-top: 3%;
+}
+
+.column .margem{
+  margin-left: 23%;
+}
+
+.column .isso .ver{
+  height: 40px;
+  width: 60%;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-left: 20%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(154, 143, 255);
+}
+
+.column .isso .ver:hover{
+  background: rgb(127, 118, 255);
+}
+
+.bote{
+  width: 27%;
+  height: 50px;
+  border-color: rgb(154, 143, 255);
+  color: rgb(154, 143, 255);
+  background: rgb(236, 235, 255);
+  pointer-events: none;
+  margin-top: 2%;
+}
+
+.space{
+  margin-left: 5%;
+}
+
+.columnn {
+  display: flex;
+  column-gap: 15px;
+}
+
+main.cards {
+    display: flex;
+    padding: 32px;
+}
+
+.forms{
+  display: flex;
+  height: 45px;
+  font-size: 1.7rem;
+  color: #707070;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.texto{
+    margin-left: 5%;
+    display: flex;
+}
+
+.form h4{
+  margin-top: 4%;
+  display: flex;
+  margin-left: 5%;
+}
+
+  header {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    text-align: center;
+  }
+  .form {
+    margin-top: 30px;
+  }
+  .form .input-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .input-box label {
+    color: #333;
+  }
+  .form :where(.input-box input, .select-box, .select-boxx, textarea) {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1.5rem;
+    color: #4f4f4f;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+  .input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  .form .column {
+    display: flex;
+    column-gap: 15px;
+  }
+  .select-box select {
+    height: 100%;
+    width: 110%;
+    margin-left: -5%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1.5rem;
+  }
+  .select-boxx select {
+    height: 100%;
+    width: 104%;
+    margin-left: -2%;
+    margin-right: -3%;
+    outline: none;
+    border: none;
+    color: #3e3e3e;
+    font-size: 1.5rem;
+  }
+
+  .fa-check-circle{
+    margin: 2%;
+    color: rgb(87, 210, 138);
+  }
+
+@media screen and (max-width: 1024px) {
+    .botC {
+        margin-top: 24%;
+        margin-left: 5%;
+        width: 90%;
+        text-align: center;
+    }
+    .menu-btn {
+        margin-top: 15%;
+    }
+    .form :where(.input-box input, .select-box, .select-boxx, textarea) {
+      font-size: 1.4rem;
+    }
+    .columnn {
+      flex-wrap: none;
+    }
+    .column .margem{
+      margin-left: 1%;
+    }
+    .column {
+      flex-wrap: wrap;
+      width: 90%;
+      margin-left: 3%;
+      margin-top: 2%;
+    }
+    .column .isso{
+      width: 80%;
+      height: 100%;
+      margin: 10%; 
+    }
+    .column .isso h3{
+      margin-left: 3%;
+      margin-top: 3%;
+    }
+}
+
+/* STYLE PARA CRUD LISTA */
+
+/* .conteudo {
+  width: 100%;;
+  max-width: 450px;
+  margin-top: 5px;
+  padding: 55px;
+  border-radius: 12px;
+} */
+
+#inputNovaTarefa{
+  font-size: 15px;
+}
+
+.topo {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 35px;     
+}
+
+.topo input {
+  width: 87%;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  background: #d9d9d9;
+  color: #626262;
+}
+
+.topo button {
+  width: 45px;
+  border-radius: 12px;
+  border: none;
+  background: #d9d9d9;
+  color: #424242;
+  outline: none;
+  margin-left: 2%;
+}
+
+.topo button:hover {
+  background: #8c8c8c;
+  cursor: pointer;
+}
+
+/* #listaTarefas {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+} */
+
+#listaTarefas li {
+  padding: 10px;
+  background: #c1c1c1;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btnAcao {
+  border-radius: 20px;
+  border: none;
+  width: 38px;
+  height: 38px;
+  margin-right: 8px;
+  cursor: pointer;
+  background: #9d9d9d;
+  color: #FFF;
+  outline: none;
+}
+
+.btnAcao:hover {
+  background: #414141;
+}
+
+/* .textoTarefa {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 290px;
+  white-space: nowrap;
+} */
+
+#btnopen{
+  background: rgb(127, 118, 255);
+  color: white;
+  border: none;
+  border-radius: 0%;
+  width: 20%;
+  height: 40px;
+}
+
+#btnopen:hover{
+  background: rgb(111, 100, 255);
+} 
+
+#open-modal {
+  background-color: rgb(127, 118, 255);
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.botoes{
+  background: rgb(127, 118, 255);
+  color: white;
+  border: none;
+  border-radius: 0%;
+  width: 20%;
+  height: 40px;
+} 
+
+.botoes:hover{
+  background: rgb(111, 100, 255);
+} 
+
+#janelaEdicao {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #626262;
+  border: 1px solid #2f2e2e;
+  width: 415px;
+  border-radius: 12px;
+  z-index: 200;
+  display: none;
+}
+
+#idTarefaEdicao{
+  display: none;
+}
+
+#janelaEdicao.abrir {
+  display: block !important;
+}
+
+#janelaEdicaoFundo {
+  position: fixed;
+  top: 0;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  opacity: 0.9;
+  z-index: 100;
+  right: 0;
+  display: none;
+}
+
+#janelaEdicaoFundo.abrir {
+ display: block !important;    
+}
+
+#janelaEdicaoBtnFechar {
+  position: absolute;
+  top: -25px;
+  right: -18px; 
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #2d2c2c;
+  background: #2d2c2c;
+  color: #FFF;
+  outline: none;
+}
+
+form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.frm-linha {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.frm-linha label {
+  margin-bottom: 7px;
+}
+
+.frm-linha input {
+  padding: 15px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  background: #4a4a4a;
+  color: #cecece;
+}
+
+.frm-linha button {
+  background: #4a4a4a;
+  border: none;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: #CCC;
+  cursor: pointer;
+  height: 50px;
+  font-size: 1.3rem;
+  outline: none;
+}
+
+.frm-linha button:hover {
+  background: #292929;
+} 
+
+/* ADICIONAR IMAGEM MODAL */
+#picture__input {
+  display: none;
+}
+
+.picture {
+  width: 230px;
+  margin: 1%;
+  aspect-ratio: 16/9;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed currentcolor;
+  cursor: pointer;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  outline: none;
+  overflow: hidden;
+}
+
+.picture:hover {
+  color: #777;
+  background: #ccc;
+}
+
+.picture:active {
+  border-color: turquoise;
+  color: turquoise;
+  background: #eee;
+}
+
+.picture:focus {
+  color: #3f3f3f;
+  background: #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture__img {
+  max-width: 100%;
+}

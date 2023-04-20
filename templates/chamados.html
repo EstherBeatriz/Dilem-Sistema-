@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <link rel="stylesheet" href="/static/chamados.css">
+
+    <main class="cards">
+        <section class="card shop" >
+                <a href="{{url_for('ti')}}"><img src="/static/img/TI.png" class="img" alt="Shop here."></a>
+            <h3>Técnico TI</h3>
+        </section>
+        <section class="card about">
+                <a href="{{url_for('predial')}}"><img src="/static/img/predial.png" class="img" alt="About us."></a>
+            <h3>Técnico Predial</h3>
+        </section>
+    </main>
+    <main class="cards">
+        <section class="card about margem" >
+                <a href="{{url_for('mecanica')}}"><img src="/static/img/mecanica.png" class="img" alt="About us."></a>
+            <h3>Técnico Mecânica</h3>
+        </section>
+        <section class="card about">
+                <a href="{{url_for('limpeza')}}"><img src="/static/img/limpeza.png" class="img" alt="About us."></a>
+            <h3>Limpeza</h3>
+        </section>
+    </main>
+    <main class="cards">
+        <section class="card contact margem">
+                <a href="{{url_for('eletrotecnico')}}"><img src="/static/img/Eletrotenica.png" class="img" alt="Contact us."></a>
+            <h3>Técnico Eletrotécnica</h3>
+        </section>
+    </main>
+    {% if mensagem is not undefined %}
+    <div class="pop-up-reserva">
+      <div class="pop-up-content">
+        {{ mensagem }}
+      </div></div>
+ 
+  {% endif %}
+{% endblock conteudo %}

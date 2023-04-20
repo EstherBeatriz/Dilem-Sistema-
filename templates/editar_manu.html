@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<link rel="stylesheet" href="/static/editar_manuStyle.css" />
+
+<script>
+    $.getScript('//static/js/Reservar_SalaScript.js', function() { })
+ </script>
+
+<h4 class="titulo">Manutenção</h4>
+<div>
+    <input style="margin-top: 3%;" class="input-box" type="text" placeholder="Nome do responsável" required maxlength="70"/>
+</div>
+<div class="column">
+    <input class="form-control margemmmm input-boxxxx" type="text" placeholder=" N° Protocolo 123456" readonly>
+    <input class="form-control input-boxxxxz" type="text" placeholder=" 27/03/2023" readonly>
+  </div>
+<div class="column">
+    <div class="select-boxx margemmmm">
+        <select>
+            <option hidden>Tipo</option>
+            <option> Manutenção TI</option>
+            <option> Manutenção Predial</option>
+            <option> Manutenção Mecânica</option>
+            <option> Manutenção Eletrotécnica</option>
+            <option> Limpeza</option>
+          </select>
+    </div>
+    <div class="select-boxx">
+        <select>
+          <option hidden>Bloco</option>
+          <option> Bloco A </option>
+          <option> Bloco B </option>
+          <option> Bloco C </option>
+        </select>
+    </div>
+    <div class="select-boxx">
+        <select>
+          <option hidden>Sala</option>
+          <option> Não sei banco de dados</option>
+          <option> Não sei banco de dados</option>
+          <option> Não sei banco de dados</option>
+        </select>
+    </div>
+</div>
+<div class="select-boxxx">
+    <select>
+      <option hidden>Andamento</option>
+      <option> Feito </option>
+      <option> Em andamento </option>
+      <option> Não foi feito </option>
+    </select>
+</div>
+<div class="columnn">
+    <br><input class="input-boxd" type="text" placeholder=" Finalidade:" required maxlength="200"/>
+</div>
+<div class="column separar margeem">
+    <h6 style="margin-bottom: 4%; font-size: larger;">Antes:</h6>
+      <label class="picture separar" for="picture__input" tabIndex="0">
+        <span class="picture__image"></span>
+      </label>
+      <input type="file" name="picture__input" id="picture__input">
+      
+    <h6 style=" margin-top: 0%; font-size: larger" class="separar">Depois:</h6>
+      <label class="picture separar" for="picture__inputt" tabIndex="0">
+        <span class="picture__imagee"></span>
+      </label>
+      <input type="file" name="picture__inputt" id="picture__inputt">
+</div>
+<div class="column">
+    <button type="submit" class="margemmm" onclick="funcConfirmReserva()" value="Confirmando reserva">Confirmar</button>
+    <button type="button" id="btnopen" class="btn btn-success" data-dismiss="modal" onclick="funcSairReserva()" value="Sair reserva">Sair</button>
+</div>
+
+    <script src="/static/js/Reservar_SalaScript.js"></script>
+
+{% endblock conteudo %}

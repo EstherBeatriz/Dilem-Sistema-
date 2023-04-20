@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/Salas_ocupStyle.css" />
+
+
+    <script>
+      $.getScript('/static/js/VerAndamentoScript.js', function() { })
+   </script>
+
+    <section class="container" >
+      <header>Manutenções do Dia</header>
+      <form action="#" class="form">
+        <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Bloco</option>
+                <option> Bloco A</option>
+                <option> Bloco B</option>
+                <option> Bloco C</option>
+              </select>
+            </div>
+            <div class="select-box">
+                <select>
+                  <option hidden>Sala</option>
+                  <option>Desenvolvimento de Sistema</option>
+                  <option> Mecânica</option>
+                  <option> Manutenção Automotiva</option>
+                  <option> 6ºA - Sesi</option>
+                  <option> 8ºB - Sesi</option>
+                  <option> 9ºB - Sesi</option>
+                </select>
+            </div>
+        </div>
+        <div class="column">
+            <div class="input-box">
+              <input type="number" placeholder="Número de Protocolo"/>
+            </div>
+            <div style="margin-top: 28px;" class="select-box">
+              <select>
+                <option hidden>Tipo</option>
+                <option> Técnico TI</option>
+                <option> Manutenção Predial</option>
+                <option> Manutenção Mecânica</option>
+                <option> Manutenção Eletrotécnica</option>
+                <option> Limpeza</option>
+              </select>
+            </div>
+          </div>
+        <div class="input-box">
+          <input type="text" placeholder="Nome do responsável" required />
+        </div>
+        <div class="column">
+            <button>Filtrar</button>
+            <button>Limpar filtro</button>
+          </div>
+      </form>
+    </section>
+<!-- -------------------------------------------------------------------------------------------------------- -->
+    <div class="column">
+      <div class="isso margem">
+          <div class="columnn">
+            <h3>Isabella De Medeiros Duarte</h3>
+          </div>
+          <i class="fa fa-info-circle space"></i><a style="margin-left: 7%;">8</a>
+          <br><i class="fa fa-cogs space"></i><a style="margin-left: 6%;">Técnico TI</a>
+          <br><i class="fa fa-home space"></i>
+          <button class="bote space">Bloco C</button>
+          <button class="bote">Sala Laborátorio</button>
+          <br><i class="fa fa-calendar space"></i><a style="margin: 7%;">06/04/2023</a>
+        <br><h6 class="space">Finalidade: </h6>
+        <input type="text" class="input" placeholder="O Computador liga e desliga e da tela Azul, e só depois de alguns momentos ele volta mas desliga de novo e não liga mais," readonly>
+        <br><h6 class="space">Andamento: </h6>
+        <input type="text" class="input" placeholder="Sendo feito" readonly>
+          <h6 style="text-align: center; margin-bottom: 4%;">Adicione fotos do Local/Objeto:</h6>
+          <div class="column">
+            <h6 style="margin-bottom: 4%;">Antes:</h6>
+              <label class="picture separar" for="picture__input" tabIndex="0">
+                <span class="picture__image"></span>
+              </label>
+              <input type="file" name="picture__input" id="picture__input">
+              
+            <h6 style=" margin-top: 0%;" class="separar">Depois:</h6>
+              <label class="picture separar" for="picture__inputt" tabIndex="0">
+                <span class="picture__imagee"></span>
+              </label>
+              <input type="file" name="picture__inputt" id="picture__inputt">
+        </div> 
+        <div class="column">
+          <button class="editar margems"><a href="{{url_for('editar')}}" style="color: aliceblue; text-decoration: none;">Editar</a></button>
+          <button class="editar">Excluir</button>
+          <button class="editar">Feito</button>
+        </div>
+      </div> 
+    </div>
+<!-- -------------------------------------------------------------------------------------------------------- -->
+    <div class="column">
+      <div class="isso margem">
+        <div class="columnn">
+          <h3>Esther Beatriz da Costa Oliveira</h3>
+        </div>
+        <i class="fa fa-info-circle space"></i><a style="margin-left: 7%;">7</a>
+        <br><i class="fa fa-cogs space"></i><a style="margin-left: 6%;">Técnico TI</a>
+        <br><i class="fa fa-home space"></i>
+        <button class="bote space">Bloco A</button>
+        <button class="bote">Sala Laborátorio</button>
+        <br><i class="fa fa-calendar space"></i><a style="margin: 7%;">05/04/2023</a>
+        <br><h6 class="space">Finalidade: </h6>
+        <input type="text" class="input" placeholder="O computador não quer mais ligar e meus arquivos importantes estão lá." readonly>
+        <br><h6 class="space">Andamento: </h6>
+        <input type="text" class="input" placeholder="Sendo feito" readonly>
+        <h6 style="text-align: center; margin-bottom: 4%;">Adicione fotos do Local/Objeto:</h6>
+        <div class="column">
+          <h6 style="margin-bottom: 4%;">Antes:</h6>
+            <label class="picture separar" for="picture__input" tabIndex="0">
+              <span class="picture__image"></span>
+            </label>
+            <input type="file" name="picture__input" id="picture__input">
+            
+          <h6 style=" margin-top: 0%;" class="separar">Depois:</h6>
+            <label class="picture separar" for="picture__inputt" tabIndex="0">
+              <span class="picture__imagee"></span>
+            </label>
+            <input type="file" name="picture__inputt" id="picture__inputt">
+        </div>
+        <div class="column">
+          <button class="editar margems"><a href="{{url_for('editar')}}" style="color: aliceblue; text-decoration: none;">Editar</a></button>
+          <button class="editar">Excluir</button>
+          <button class="editar">Feito</button>
+        </div>
+      </div> 
+    </div>
+<!-- -------------------------------------------------------------------------------------------------------- -->
+<!--<div class="column">
+  <div class="isso margem">
+    <div class="columnn">
+      <h3>Rodrigo Lacerda</h3>
+    </div>
+    <i class="fa fa-info-circle space"></i><a style="margin-left: 7%;">123456</a>
+    <br><i class="fa fa-cogs space"></i><a style="margin-left: 6%;">Manutenção TI</a>
+    <br><i class="fa fa-home space"></i>
+    <button class="bote space">Bloco A</button>
+    <button class="bote">Sala 201</button>
+    <br><i class="fa fa-calendar space"></i><a style="margin: 7%;">16/02/2023</a>
+    <br><h6 class="space">Finalidade: </h6>
+    <input type="text" class="input" placeholder="  Para aplicação de prova." readonly>
+    <br><h6 class="space">Andamento: </h6>
+    <input type="text" class="input" placeholder="Sendo feito" readonly>
+    <h6 style="text-align: center; margin-bottom: 4%;">Adicione fotos do Local/Objeto:</h6>
+    <div class="column">
+      <h6 style="margin-bottom: 4%;">Antes:</h6>
+        <label class="picture separar" for="picture__input" tabIndex="0">
+          <span class="picture__image"></span>
+        </label>
+        <input type="file" name="picture__input" id="picture__input">
+        
+      <h6 style=" margin-top: 0%;" class="separar">Depois:</h6>
+        <label class="picture separar" for="picture__inputt" tabIndex="0">
+          <span class="picture__imagee"></span>
+        </label>
+        <input type="file" name="picture__inputt" id="picture__inputt">
+    </div>
+    <div class="column">
+      <button class="editar margems"><a href="{{url_for('editar')}}" style="color: aliceblue; text-decoration: none;">Editar</a></button>
+      <button class="editar">Excluir</button>
+      <button class="editar">Feito</button>
+    </div>
+  </div> 
+</div>-->
+
+
+
+    <script src="/static/js/VerAndamentoScript.js"></script>
+
+
+{% endblock conteudo %}

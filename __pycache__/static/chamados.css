@@ -1,0 +1,145 @@
+.menu-btn{
+    margin-top: 0%;
+}
+
+.img{
+    border: none;
+    width: 60%;
+    border-radius: 0%;
+    margin-left: 5%;
+    margin-top: -3%;
+    transition: 0.2s;
+}
+
+main.cards {
+    display: flex;
+    padding: 32px;
+    margin-left: 30%;
+}
+
+ main.cards section.card {
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-left: 90px;
+    border-radius: 10px;
+    transition: 0.2s;
+    border-style: solid;
+    border-color: #A4B2FB !important;
+    border-width: 4px;
+}
+
+main.cards section.card:hover{
+    background-image: linear-gradient(to bottom right, #99D0F9, #A4B2FB);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: 0.2s;
+    border: none;
+} 
+
+main.cards section.card:hover h3{
+    color: white;
+    transition: 0.2s;
+} 
+
+main.cards section.card:first-child {
+    margin-left: 0;
+    transition: 0.2s;
+}
+
+main.cards section.card h3 {
+    font-size: 30px;
+    margin: 16px 0;
+    color: #A4B2FB;
+}
+
+main.cards section.card h3:hover{
+    color: #fff;
+}
+
+main.cards section:hover {
+    color: #fff;
+}
+
+main.cards section.card {
+    border-color: #99D0F9;
+}
+
+@media screen and (max-width: 1024px) {
+    main.cards section.card {
+        height: 350px;
+        width: 300px;
+    }
+    
+    main.cards {
+        flex-direction: column;
+        margin-left: 3%;
+    }
+
+    main.cards section.card {
+        margin-left: 3%;
+        margin-top: 8%;
+        background-image: linear-gradient(to bottom right, #99D0F9, #A4B2FB);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transition: 0.2s;
+        border: none;
+    }
+
+    main.cards section.card:hover{
+        background-image: linear-gradient(to bottom right, #99D0F9, #A4B2FB);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transition: 0.2s;
+        border: none;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+
+    main.cards section.card h3 {
+        color: #ffffff;
+    }
+
+    .menu-btn{
+        margin-top: 23%;
+    }
+    .img{
+        width: 80%;
+    }
+}
+
+
+/*POP UM CHAMADO ABERTO*/
+.pop-up-reserva {
+    position: fixed;
+    width: 400px;
+    background: #6caaeb;
+    right: 1rem;
+    max-width: 95vw;
+    color: white;
+    padding: 1rem;
+    bottom: 1rem;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0,38);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0,38);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0,38);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  .pop-up-content {
+    text-align: center;
+    border-radius: 5px;
+    animation: fade-in-up 0.5s ease-in-out forwards;
+  }

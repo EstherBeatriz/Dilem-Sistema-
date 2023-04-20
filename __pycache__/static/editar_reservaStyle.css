@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+  overflow: none;
+}
+
+.titulo{
+    font-weight: bolder;
+    margin-left: 51%;
+    font-size: 30px;
+    margin-top: 1%;
+}
+
+.columnn .input-boxd{
+  height: 120px;
+  font-size: 1.1rem;
+  width: 65%;
+  outline: none;
+  color: #333;
+  margin-top: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-left: 28%;
+}
+
+div .margim{
+  margin-top: 400px;
+}
+
+.select-box select {
+  height: 60px;
+  width: 65%;
+  margin-left: 28%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1.1rem;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.select-boxx select {
+  margin-top: 10%;
+  height: 60px;
+  width: 332px;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.column .margem{
+  margin-left: 445px;
+}
+
+.column .margemm{
+  margin-left: 430px;
+}
+
+div .input-box {
+  height: 60px;
+  width: 65%;
+  outline: none;
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-left: 28%;
+}
+
+div .input-boxa {
+  height: 60px;
+  width: 65%;
+  outline: none;
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 4%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-left: 28%;
+}
+
+div .input-boxx {
+  height: 60px;
+  width: 332px;
+  font-size: 1.1rem;
+  outline: none;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-top: 2%;
+}
+.column .input-boxx{
+  margin-top: 10px;
+}
+
+.column .input-boxxx{
+  margin-top: 32px;
+}
+
+.input-boxx input{
+  height: 60px;
+  width: 332px;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.column .input-boxx a{
+  font-size: 1.1rem;
+}
+
+.column button {
+  height: 55px;
+  width: 15%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(154, 143, 255);
+  border-radius: 5px;
+}
+.column button:hover {
+  background: rgb(127, 118, 255);
+}
+.column .margemmm{
+  margin-left: 60%;
+}
+
+.botoes{
+  background: rgb(127, 118, 255);
+  color: white;
+  border: none;
+  border-radius: 0%;
+  width: 20%;
+  height: 40px;
+}
+
+.botoes:hover{
+  background: rgb(111, 100, 255);
+}
+
+
+  @media (max-width: 1024px) {
+    .titulo{
+        margin-left: 25%;
+        font-size: 25px;
+        margin-top: 10%;
+    }
+    .select-box select {
+      margin-top: 10%;
+      height: 60px;
+      margin-left: 5%;
+      width: 90%;
+    }
+    div .input-box {
+      height: 60px;
+      width: 90%;
+      margin-left: 5%;
+    }
+    .form .column {
+      flex-wrap: wrap;
+    }
+    .column .margem{
+      margin-left: 10px;
+    }
+    
+    .column .margemm{
+      margin-left: 10px;
+    }
+    .select-boxx select {
+      width: 110px;
+      padding: 0 8px;
+      margin-left: 5%;
+    }
+    div .input-boxx {
+      width: 110px;
+      padding: 0 8px;
+    }
+    
+    .input-boxx input{
+      width: 110px;
+      padding: 0 8px;
+    }
+    .column .input-boxx a{
+      font-size: 0.85rem;
+    }
+    .column .input-boxx{
+      margin-top: 10px;
+    }
+    .columnn .input-boxd{
+      margin-left: 5%;
+      margin-top: 1%;
+      width: 91%;
+    }
+    .column button {
+      height: 55px;
+      width: 30%;
+    }
+    .column .margemmm{
+      margin-left: 30%;
+    }
+    div .margim{
+      margin-top: 150px;
+    }
+    div .input-boxa {
+      margin-top: 14%;
+      margin-left: 5%;
+      width: 92%;
+    }
+  }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/Login.css">
+        <link rel="shortcut icon" href="/static/img/globoPNG.png">
+        <title>LOGIN</title>
+    </head>
+    <body>
+        <section class="area-login">
+            <div class="login">
+                <div>
+                  <img src="/static/img/logoPNG.png"></p>
+                </div>
+                <form action="/logar" method="post" >
+                    <input type="email" name="email" placeholder="Email" autofocus> <!--AUTOFOCUS-->
+           
+                        <input type="password" name="password" placeholder="Senha" id="password" minlength="2"
+                        maxlength="15" size="10">
+                        <div id="icon" onclick="showHide()"></div>
+             
+
+                    <div class="divCheck">
+                        <input type="checkbox" /> 
+                        <span>Relembrar Senha</span>
+                    </div>
+               
+                    <div class="input-group" >
+                        <input id="button" type="submit" value="Login" >
+                    </div>
+
+                    {%- for mensagem in get_flashed_messages()  %} <!--ALERTA DE MENSAGEM - USUARIO NÃO ENCONTRADO-->
+                        <div id="alert" class="alert alert-danger">
+                            {{mensagem}}
+                        </div>
+                   {%- endfor %}
+        
+                   
+                </form>
+                
+                <p><a href="{{url_for('esqueceuasenhas')}}">Esqueceu a senha?</a></p>
+            </div>
+        </section>
+    </body>
+    <script>
+        const password = document.getElementById('password');
+        const icon = document.getElementById('icon');
+
+        function showHide(){
+            if(password.type === 'password'){
+                password.setAttribute('type','text');
+                icon.classList.add('hide')
+            }
+            else{
+                password.setAttribute('type', 'password');
+                icon.classList.remove('hide');
+            }
+        }
+    </script>
+</html>

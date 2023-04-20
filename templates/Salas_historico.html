@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/Salas_historico.css" />
+    <script>
+        $.getScript('/static/js/Sala_historico.js', function() { })
+     </script>
+    <section class="container">
+    <!-- TITULO -->
+    <header>Histórico de Reservas de Sala</header>
+    <!--   CHECKBOX -- TODOS - FILTRAR -->
+    <input style="margin-left: 35%; font-size: 1rem;" class="troca-titulob" type="radio"  name="opcao" value="a">Filtrar
+    <input class="troca-titulob" type="radio" name="opcao" value="b">Reservas
+    {% if nivel==1 %} 
+    <div id="conteudo-a"  class="conteudo">
+        <div id="container-m">
+            <form action="#" class="form">
+                <!-- <div class="column">
+                    <div class="select-box">
+                    <select>
+                        <option hidden>Bloco</option>
+                        <option> Bloco A</option>
+                        <option> Bloco B</option>
+                        <option> Bloco C</option>
+                    </select>
+                    </div>
+                    <div class="select-box">
+                        <select>
+                        <option hidden>Sala</option>
+                        <option> Não sei banco de dados</option>
+                        <option> Não sei banco de dados</option>
+                        <option> Não sei banco de dados</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input-box">
+                      <label>Data/Início</label>
+                      <input type="date"/>
+                    </div>
+                    <div class="input-box">
+                        <label>Data/Final</label>
+                        <input type="date"/>
+                    </div>
+                  </div>
+                <div class="column">
+                  <div class="input-box">
+                    <input type="number" placeholder="Número de Protocolo"/>
+                  </div>
+                  <div style="margin-top: 28px;" class="select-box">
+                    <select>
+                      <option hidden>Tipo</option>
+                      <option> Manutenção TI</option>
+                      <option> Manutenção Predial</option>
+                      <option> Manutenção Mecânica</option>
+                      <option> Manutenção Eletrotécnica</option>
+                      <option> Limpeza</option>
+                    </select>
+                  </div>
+                </div> -->
+                <div class="input-box">
+                  <input type="text" placeholder="Pesquisar" id="inputAddress"/>
+                </div>
+            </form>
+            <!-- <button style="margin-left: 19%;" class="troca-tituloc" type="reset" >Limpar Filtro</button>
+            <button class="troca-tituloc" type="submit" >Pesquisar</button> -->
+        </div>
+        
+        <div class="responsive-table">
+         
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 14%;">ID</th>
+              <th scope="col" style="width: 18%;">Disciplina</th>
+              <th scope="col" style="width: 23%;">Data da Reserva</th>
+              <th scope="col" style="width: 23%;">Responsável</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {% for result in resultsAll %}
+              <tr>
+                <th scope="row">{{result[1]}}</th>
+                <td>{{result[3]}}</td>
+                <td>{{result[2]}}</td>
+                <td>{{result[0]}}</td>
+                <td>
+                  <button id="open-modal" type="button" class="fa fa-search bot" onclick="toggleModal('{{result[1]}}')"></button>
+              </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+        </div>
+    </div>  
+    {% endif %} 
+    <div id="conteudo-b" style="" class="conteudo">
+
+        <div class="responsive-table">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 14%;">Id da Reserva</th>
+                <th scope="col" style="width: 18%;">Disciplina</th>
+                <th scope="col" style="width: 23%;">Data</th>
+                <th scope="col" style="width: 23%;">Responsável</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for result in results %}
+              <tr>
+                <th scope="row">{{result[1]}}</th>
+                <td>{{result[3]}}</td>
+                <td>{{result[2]}}</td>
+                <td>{{result[0]}}</td>
+                <td>
+                  <button id="open-modal" type="button" class="fa fa-search bot"  onclick="toggleModal('{{result[1]}}')"></button>
+              </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    </div>   
+    </section>
+    {% for result in results %}
+      <div id="fade{{result[1]}}" class="hide chamado fade"  onclick="toggleModal('{{result[1]}}')"></div>
+    <div id="modal{{result[1]}}" class="hide chamado modal">
+      <div class="modal-header">
+        <h5>{{result[0]}}</h5>
+        <button id="close-modal{{result[1]}}" class="fas fa-times"  onclick="toggleModal('{{result[1]}}')"></button>
+      </div>
+      <div class="modal-body">
+        <i class="fa fa-info-circle space"></i><a style="margin-left: 2%;">{{result[1]}}</a>
+        <br><i class="fa fa-cogs space"></i><a style="margin-left: 2%;">{{result[2]}}</a>
+        <br><i class="fa fa-home space"></i>
+        <button class="bote space">Bloco {{result[5]}}</button>
+        <button class="bote">Sala {{result[6]}}</button>
+        <br><i class="fa fa-calendar space"></i><a style="margin-left: 2%;">{{result[4]}}</a>
+        <br><i class="fa fa-clock space"></i>
+        <button class="bote space">{{result[9]}}</button>
+        <!-- <button class="bote space">17:00</button> -->
+        <br><h6 class="space">Finalidade: </h6>
+        <div class="input" size=" 40px" readonly>{{result[10]}}</div>
+        <!-- <div class="column">
+          <h6 style="margin-bottom: 4%;">Antes:</h6>
+            <label class="picture separar" for="picture__input" tabIndex="0">
+              <span class="picture__image"></span>
+            </label>
+            <input type="file" name="picture__input" id="picture__input">
+            
+          <h6 style=" margin-top: 0%;" class="separar">Depois:</h6>
+            <label class="picture separar" for="picture__inputt" tabIndex="0">
+              <span class="picture__imagee"></span>
+            </label>
+            <input type="file" name="picture__inputt" id="picture__inputt">
+        </div> -->
+        <h6 style=" margin-top: 4%;">Avaliação da manutenção:</h6>
+<section class="estrelascentral">
+    <div class="stars" onclick="setRating(1)"></div>
+    <div class="stars" onclick="setRating(2)"></div>
+    <div class="stars" onclick="setRating(3)"></div>
+    <div class="stars" onclick="setRating(4)"></div>
+    <div class="stars" onclick="setRating(5)"></div>
+</section> 
+    <p id="message">Obrigada por sua avaliação!</p>
+      <form action="/deletarChamado" method="post">
+        <input type="hidden" name="id_chamado" value="{{result[1]}}">
+        <button class="botExcluir" type="submit">Excluir</button>
+      </form>
+        
+      </div>
+    </div>
+    {% endfor %}
+
+
+    {% for result in resultsAll %}
+    <div id="fade{{result[1]}}" class="hide chamado fade"  onclick="toggleModal('{{result[1]}}')"></div>
+  <div id="modal{{result[1]}}" class="hide chamado modal">
+    <div class="modal-header">
+      <h5>{{result[0]}}</h5>
+      <button id="close-modal" class="fas fa-times"  onclick="toggleModal('{{result[1]}}')"></button>
+    </div>
+
+
+    <div class="modal-body">
+      <i class="fa fa-info-circle space"></i><a style="margin-left: 2%;">{{result[1]}}</a>
+      <br><i class="fa fa-cogs space"></i><a style="margin-left: 2%;">{{result[2]}}</a>
+      <br><i class="fa fa-home space"></i>
+      <button class="bote space">Bloco {{result[5]}}</button>
+      <button class="bote">Sala {{result[6]}}</button>
+      <br><i class="fa fa-calendar space"></i><a style="margin-left: 2%;">{{result[4]}}</a>
+      <br><i class="fa fa-clock space"></i>
+      <button class="bote space">{{result[9]}}</button>
+      <!-- <button class="bote space">17:00</button> -->
+      <br><h6 class="space">Finalidade: </h6>
+      <div class="input border" size=" 40px" readonly>{{result[10]}}</div>
+
+
+      
+      <!-- <div class="column">
+
+        <h6 style="margin-bottom: 4%;">Antes:</h6>
+          <label class="picture separar" for="picture__input" tabIndex="0">
+            <span class="picture__image"></span>
+          </label>
+          <input type="file" name="picture__input" id="picture__input">
+          
+        <h6 style=" margin-top: 0%;" class="separar">Depois:</h6>
+          <label class="picture separar" for="picture__inputt" tabIndex="0">
+            <span class="picture__imagee"></span>
+          </label>
+          <input type="file" name="picture__inputt" id="picture__inputt">
+      </div> -->
+      <h6 style=" margin-top: 4%;">Avaliação da manutenção:</h6>
+<section class="estrelascentral">
+  <div class="stars" onclick="setRating(1)"></div>
+  <div class="stars" onclick="setRating(2)"></div>
+  <div class="stars" onclick="setRating(3)"></div>
+  <div class="stars" onclick="setRating(4)"></div>
+  <div class="stars" onclick="setRating(5)"></div>
+</section> 
+  <p id="message">Obrigada por sua avaliação!</p>
+    <form action="/deletarChamado" method="post">
+      <input type="hidden" name="id_chamado" value="{{result[1]}}">
+      <button class="botExcluir" type="submit">Excluir</button>
+    </form>
+      
+    </div>
+  </div>
+  {% endfor %}
+
+      <!-- <div id="fade" class="hide chamado fade"></div>
+    <div id="modal" class="hide chamado modal">
+      <div class="modal-header">
+        <h5>Rodrigo Lacerda</h5>
+        <button id="close-modal" class="fas fa-times"></button>
+      </div>
+      <div class="modal-body">
+        <i class="fa fa-info-circle space"></i><a style="margin-left: 2%;">123456</a>
+        <br><i class="fa fa-cogs space"></i><a style="margin-left: 2%;">Manutenção TI</a>
+        <br><i class="fa fa-home space"></i>
+        <button class="bote space">Bloco A</button>
+        <button class="bote">Sala 201</button>
+        <br><i class="fa fa-calendar space"></i><a style="margin-left: 2%;">16/02/2023</a>
+        <br><i class="fa fa-clock space"></i>
+        <button class="bote space">13:00</button>
+        <button class="bote space">17:00</button>
+        <br><h6 class="space">Finalidade: </h6>
+        <input type="text" class="input" placeholder="  Para aplicação de prova." size=" 40px" readonly>
+        <div class="column">
+          <h6 style="margin-bottom: 4%;">Antes:</h6>
+            <label class="picture separar" for="picture__input" tabIndex="0">
+              <span class="picture__image"></span>
+            </label>
+            <input type="file" name="picture__input" id="picture__input">
+            
+          <h6 style=" margin-top: 0%;" class="separar">Depois:</h6>
+            <label class="picture separar" for="picture__inputt" tabIndex="0">
+              <span class="picture__imagee"></span>
+            </label>
+            <input type="file" name="picture__inputt" id="picture__inputt">
+        </div>
+        <h6 style=" margin-top: 4%;">Avaliação da manutenção:</h6>
+<section class="estrelascentral">
+    <div class="stars" onclick="setRating(1)"></div>
+    <div class="stars" onclick="setRating(2)"></div>
+    <div class="stars" onclick="setRating(3)"></div>
+    <div class="stars" onclick="setRating(4)"></div>
+    <div class="stars" onclick="setRating(5)"></div>
+</section> 
+    <p id="message">Obrigada por sua avaliação!</p>
+        <button class="botExcluir">Excluir</button>
+      </div>
+    </div> -->
+    
+    <script src="/static/js/Sala_historico.js"></script>
+{% endblock conteudo %}

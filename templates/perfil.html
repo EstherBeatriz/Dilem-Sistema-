@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<head>
+  
+    <link rel="stylesheet" href="/static/opcoes.css">
+    <link rel="stylesheet" href="/static/perfil.css">
+</head>     
+
+
+    <main class="cards">
+        <section class="card shop" >
+            <div class="perfil-div">
+                <h3>Meu perfil</h3>
+                <img src="/static/img/logo.png" class="img" alt="Shop here.">
+                <form action="/alterarDados" method="post">
+                    <div class="column">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" disabled readonly value="{{session['username']}}">
+                    </div>
+                    <div class="column">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" disabled readonly value="{{session['email']}}">
+                    </div>
+                    <div class="column">
+                        <label for="ocupacao">Ocupação</label>
+                        <input type="text" name="ocupacao"   value="{{session['ocupacao']}}">
+                    </div>
+                    <div class="column">
+                        <label for="instituicao">Instituição</label>
+                        <input type="text" name="instituicao"  value="{{session['instituicao']}}">
+                    </div>
+                    <div class="column">
+                        <label for="pass">Senha</label>
+                        <input type="password" name="pass"  value="{{session['pass']}}">
+                    </div>
+                    <div class="column">
+                        <label for="pass-conf">Confirmar senha</label>
+                        <input type="password" name="pass-conf" value="">
+                    </div>
+                    <div class="column">
+                        <button type="submit">Alterar dados</button>
+                    </div>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+
+
+{% endblock conteudo %}

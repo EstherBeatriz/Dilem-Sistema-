@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<link rel="stylesheet" href="/static/editar_reservaStyle.css" />
+
+<script>
+    $.getScript('/static/js/editar_reservaScript.js', function() { })
+ </script>
+<body>
+<form id="form-reservar-sala">
+    <h4 class="titulo">Reservar Sala</h4>
+    <div>
+        <input class="input-box" style="margin-top: 3%;" type="text" id="nomeR" placeholder="Nome do responsável" required maxlength="70"/>
+    </div>
+    <div class="column">
+        <div class="select-boxx margem" id="turn" required>
+            <select>
+            <option hidden readonly value="">Turno</option>
+            <option value="Manhã"> Manhã </option>
+            <option value="Tarde"> Tarde </option>
+            <option value="Noite"> Noite </option>
+            </select>
+        </div>
+        <div class="select-boxx" id="bloco" required>
+            <select>
+            <option hidden readonly value="">Bloco</option>
+            <option value="A"> A</option>
+            <option value="B"> B</option>
+            <option value="C"> C</option>
+            </select>
+        </div>
+        <div class="select-boxx" id="sala" required>
+            <select>
+            <option hidden readonly value="">Sala</option>
+            <option value="Não sei banco de dados"> Não sei banco de dados</option>
+            <option value="Não sei banco de dados"> Não sei banco de dados</option>
+            <option value="Não sei banco de dados"> Não sei banco de dados</option>
+            </select>
+        </div>
+    </div>
+    <div class="column">
+        <div class="input-boxx margemm" style="border: none;">
+            <a>Data</a>
+            <input type="date" id="data-input" max ="9999-12-31"required onmousedown="(function(e){ e.preventDefault(); this.removeAttribute('readonly'); })(event)"/>
+        </div>
+        <div class="input-boxx" style="border: none;">
+            <a>Horário Início</a>
+            <input class="input-boxx" name="horai"  id="horai" type="time" placeholder=" Hora" required disabled/>
+        </div>
+        <div class="input-boxx" style="border: none;">
+            <a>Horário Fim</a>
+            <input class="input-boxx" name="horaf"  id="horaf"type="time" placeholder=" Hora" required disabled/>
+        </div>
+    </div>
+    <div class="column">
+        <input class="input-boxa" type="text" id="disc" placeholder="Disciplina" required maxlength="100"/>
+    </div>
+    <div class="columnn"> 
+        <br><input class="input-boxd" type="text" id="fina" placeholder=" Finalidade:" required maxlength="200"/>
+    </div>
+    
+    <div class="column">
+        <button type="submit" class="margemmm">Confirmar</button>
+        <button type="button" id="btnopen" class="btn btn-success" data-dismiss="modal" onclick="sair()" value="Sair reserva">Sair</button>
+    </div>
+</form>
+</body>
+    <script src="/static/js/editar_reservaScript.js"></script>
+
+{% endblock conteudo %}

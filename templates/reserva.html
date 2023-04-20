@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/ReservaStyle.css" />
+
+    <script>
+      $.getScript('/static/js/ReservaScript.js', function() { })
+   </script>
+
+    <title>Reserva de Salas</title>
+    <section class="container">
+      <header>Reserva de Sala</header>
+      <form action="/filtrarSalas" class="form" method="post">
+        <h5>Salas - SESI SENAI</h5>
+        <div class="column">
+            <div class="select-box">
+              <select name="bloco">
+                <option hidden>Bloco</option>
+                <option value="a"> Bloco A</option>
+                <option value="b"> Bloco B</option>
+                <option value="c"> Bloco C</option>
+              </select>
+            </div>
+            <div class="select-box">
+                <select name="turno">
+                  <option hidden>Turno</option>
+                  <option> Manhã</option>
+                  <option> Tarde</option>
+                  <option> Noite</option>
+                </select>
+            </div>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Data desejada</label>
+            <input type="date" max ="9999-12-31" name="data_desejada" required />
+          </div>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Entrada</label>
+            <input type="time" name="hora_i" required />
+          </div>
+          <div class="input-box">
+              <label>Saída</label>
+              <input type="time" name="hora_f" required />
+          </div>
+        </div>
+        <h5 style="margin-top: 3%">Recursos</h5>
+        <div class="gender-box">
+            <div class="gender">
+              <input type="checkbox" id="check-other" name="gender" value="Ar condicionado"/>
+              <label for="check-other">Ar condicionado</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" id="check-other" name="gender" value="Ventilador"/>
+                <label for="check-other">Ventilador</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" id="check-other" name="gender" value="Retroprojetor"/>
+                <label for="check-other">Retroprojetor</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" id="check-other" name="gender" value="Computadores"/>
+                <label for="check-other">Computadores</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" id="check-other" name="gender"value=""Quadro />
+                <label for="check-other">Quadro</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" id="check-other" name="gender" value="Mural de lembrança"/>
+                <label for="check-other">Mural de lembrança</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" id="check-other" name="gender" value="Mesas escolares"/>
+                <label for="check-other">Mesas escolares</label>
+            </div>
+            <div class="gender">
+              <input type="checkbox" id="check-other" name="gender" value="Televisão"/>
+              <label for="check-other">Televisão</label>
+            </div>
+            <input type="hidden" name="recursos_selecionados">
+        </div>
+          <div class="select-boxx">
+            <select name="capacidade">
+              <option hidden>Capacidade máxima</option>
+              <option value="1">1 Pessoa</option><option value="2">2 Pessoas</option><option value="3">3 Pessoas</option><option value="4">4 Pessoas</option><option value="5">5 Pessoas</option><option value="6">6 Pessoas</option><option value="7">7 Pessoas</option><option value="8">8 Pessoas</option><option value="9">9 Pessoas</option><option value="10">10 Pessoas</option><option value="11">11 Pessoas</option><option value="12">12 Pessoas</option><option value="13">13 Pessoas</option><option value="14">14 Pessoas</option><option value="15">15 Pessoas</option><option value="16">16 Pessoas</option><option value="17">17 Pessoas</option><option value="18">18 Pessoas</option><option value="19">19 Pessoas</option><option value="20">20 Pessoas</option><option value="21">21 Pessoas</option><option value="22">22 Pessoas</option><option value="23">23 Pessoas</option><option value="24">24 Pessoas</option><option value="25">25 Pessoas</option><option value="26">26 Pessoas</option><option value="27">27 Pessoas</option><option value="28">28 Pessoas</option><option value="29">29 Pessoas</option><option value="30">30 Pessoas</option><option value="31">31 Pessoas</option><option value="32">32 Pessoas</option><option value="33">33 Pessoas</option><option value="34">34 Pessoas</option><option value="35">35 Pessoas</option><option value="36">36 Pessoas</option><option value="37">37 Pessoas</option><option value="38">38 Pessoas</option><option value="39">39 Pessoas</option><option value="40">40 Pessoas</option><option value="41">41 Pessoas</option><option value="42">42 Pessoas</option><option value="43">43 Pessoas</option><option value="44">44 Pessoas</option><option value="45">45 Pessoas</option><option value="46">46 Pessoas</option><option value="47">47 Pessoas</option><option value="48">48 Pessoas</option><option value="49">49 Pessoas</option><option value="50">50 Pessoas</option><option value="51">51 Pessoas</option><option value="52">52 Pessoas</option><option value="53">53 Pessoas</option><option value="54">54 Pessoas</option><option value="55">55 Pessoas</option><option value="56">56 Pessoas</option><option value="57">57 Pessoas</option><option value="58">58 Pessoas</option><option value="59">59 Pessoas</option><option value="60">60 Pessoas</option><option value="61">61 Pessoa</option><option value="62">62 Pessoas</option><option value="63">63 Pessoas</option><option value="64">64 Pessoas</option>
+            </select>
+          </div>
+          <div class="column">
+            <button type="submit">Filtrar</button>
+            <button type="reset">Limpar filtro</button>
+          </div>
+      </form>
+    </section>
+    <div class="column-botaosala">
+      {% for sala in salas %}
+        <button id="buttonsalas" class="buttonSala open-modal" onclick="toggleModal('{{sala[0]}}')" type="button" id="open-modal{{sala[0]}}" >{{sala[2]}}</button>
+      {% endfor %}
+    </div>
+<!-- MODAL DAS SALAS -->
+  {% for sala in salas %}
+    <div id="fade{{sala[0]}}" class="hide fade reserva"  onclick="toggleModal('{{sala[0]}}')"></div>
+    <div id="modal{{sala[0]}}" class="hide modal reserva">
+      <div class="modal-header">
+        <h3>Sala {{sala[2]}}</h3>
+        <button class="fa fa-times close-modal" id="close-modal{{sala[0]}}" onclick="toggleModal('{{sala[0]}}')"></button>
+      </div>
+      <div class="modal-body">
+        <br><i class="fa fa-home space"></i>
+        <div class="botoes-modal">
+          <button class="bote space">Bloco {{sala[1]}}</button>
+          <button class="bote">Sala {{sala[2]}}</button>
+        </div>
+        <h6 style="margin-top: 5%;">Finalidade:</h6>
+        <div style="border: 1px solid black; border-radius: 2px; padding: 9px; text-align: justify;">
+          {{sala[5]}}        </div>
+        <h6 style="margin-top: 5%;">Recursos:</h6>
+        {% for recurso in sala[4].split(';') %}
+        <i class="fa fa-check-circle"></i><a style="color: black; text-decoration: none; font-size: 1.4rem;">{{ recurso }}</a><br>
+        {% endfor %}
+        <label class="picture" for="picture__input" tabIndex="0">
+          <span class="picture__image"></span>
+        </label>
+        <form method="post" action="/reservar">
+          <input type="hidden" name="hora_i" value="{{horario_i}}">
+          <input type="hidden" name="hora_f" value="{{horario_f}}">
+          <input type="hidden" name="data"  value="{{data}}">
+          <input type="hidden" name="fk_sala_id"  value="{{sala[0]}}">
+          
+          
+          <div class="input-modal">
+            <div class="column">
+              <div class="input-box">
+                <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Finalidade da reserva</font></font></label>
+                <input type="text" name="finalidade" id="" required>
+              </div>
+            </div>
+            <div class="column">
+              <div class="input-box">
+                <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Disciplina</font></font></label>
+                <input type="text" name="Disciplina" id="" required>
+              </div>
+            </div>
+            <div class="column">
+              <div class="input-box">
+                <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Turma</font></font></label>
+                <select type="text" name="Turma" id="" required>
+                  <option value="" readonly>Escolha a turma</option>
+                  {% for turma in turmas %}
+                    <option value="{{turma[0]}}" readonly>{{turma[1]}} - {{turma[2]}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="troca-tituloc" type="submit" style="text-decoration:none; color: aliceblue;" >Solicitar Reserva</button>
+        </form>
+        
+      </div>
+    </div>
+  {% endfor %}
+  {% if mensagem is not undefined %}
+    <div class="pop-up-reserva">
+      <div class="pop-up-content">
+        {{ mensagem }}
+      </div></div>
+ 
+  {% endif %}
+
+
+    <script src="/static/js/ReservaScript.js"></script>
+{% endblock conteudo %}

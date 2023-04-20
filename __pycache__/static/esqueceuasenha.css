@@ -1,0 +1,192 @@
+body{
+    background-image: linear-gradient(to right, rgb(223, 167, 255), rgb(155, 216, 252));
+    font-family: 'Times New Roman', Times, serif;
+    overflow: hidden; /*DEIXA A BARRA DE ROLAGEM OCULTA*/
+
+}
+.area-login{
+    display: flex; /*Para alinhar os itens*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 380px;
+    height: 370px;
+    padding: 35px;
+}
+.login form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.login p{
+  text-align: center;
+  color: rgb(48, 48, 48);
+  font-size: 18px;
+}
+
+
+.login input:not(input[type="checkbox"]){
+    margin-top: 15px;
+    background-color: #e7e7e7;
+    color: #bbbbbb;
+    padding-left: 10px;
+    border: none; /*REMOVER BORDA*/
+    height: 45px;
+    outline: none; /*remover borda*/
+    border-radius: 8px;
+
+}
+
+/*CHECKBOXXX-------------*/
+.divCheck{
+    margin-top: 5%;
+    font-size: 16px;
+    color: #525151;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.divCheck:hover{
+    color:rgb(0, 0, 0);
+}
+
+ /*LOGO----------------*/
+.login img{
+    width: 68%;
+    height:auto;
+    margin-left: 17%;
+}
+
+/*BOTÃO ENTRAR*/
+#button{
+    margin-top: 16px;
+    background-color: #d1c1ff;
+    color: #ffffff;
+    padding-left: 10px;
+    border: none; /*REMOVER BORDA*/
+    height: 45px;
+    width:100%;
+    outline: none; /*remover borda*/
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: rgb(199, 139, 255);
+    color:white;
+}
+
+.input::placeholder{
+    color: #cbd0f7;
+    font-size: 14px;
+    
+}
+form[type="submit"]{
+    display: block;
+    background-color: #5568fe;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase; /*deixa a fonte em maiucuslo*/
+    font-weight: bold;
+    cursor: pointer;
+
+}
+p{
+   color:#cbd0f7 ;
+}
+a{
+    color:#7a7a7a ;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+/*RESPONSIVIDADE*/
+
+@media only screen and (min-width: 768px) and (max-width: 820px) {
+    .area-login{
+        display: flex; /*Para alinhar os itens*/
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+   
+}
+@media only screen and  (min-width: 768px) and (max-width: 820px) {
+    .login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        width: 480px;
+        height: 550px;
+        padding: 35px;
+    }
+
+
+}
+
+@media only screen and  (min-width: 768px) and (max-width: 820px) {
+    .login input:not(input[type="checkbox"]){
+        margin-top: 15px;
+        background-color: #e7e7e7;
+        color: #bbbbbb;
+        font-size: 15px;
+        padding-left: 10px;
+        border: none; /*REMOVER BORDA*/
+        height: 50px;
+        outline: none; /*remover borda*/
+        border-radius: 8px;
+    
+    }
+
+}
+
+
+@media only screen and  (min-width: 768px) and (max-width: 820px){
+/*CHECKBOXXX-------------*/
+    .divCheck{
+        margin-top: 5%;
+        font-size: 18px;
+        color: #525151;
+        font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .divCheck:hover{
+        color:rgb(0, 0, 0);
+    }
+}
+
+@media only screen and  (min-width: 768px) and (max-width: 820px){
+   /*BOTÃO ENTRAR*/
+    button{
+        margin-top: 16px;
+        background-color: #d1c1ff;
+        color: #ffffff;
+        font-size: 16px;
+        border: none; /*REMOVER BORDA*/
+        height: 50px;
+        width:100%;
+        outline: none; /*remover borda*/
+        border-radius: 8px;
+    }
+
+    button:hover {
+        background-color: rgb(199, 139, 255);
+        color:white;
+    }
+ 
+}
